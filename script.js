@@ -5,11 +5,15 @@ let numberOfTiles = 16;
 button.addEventListener('click', function() {
     numberOfTiles = NaN;
     do {
-        numberOfTiles = parseInt(prompt("Please enter number of squares: ", "16"));
+        numberOfTiles = parseInt(prompt("Please enter number of squares (max 100):", "16"));
     } while (isNaN(numberOfTiles));
     
-    gamePad.remove();
+    if (numberOfTiles > 100) {
+        numberOfTiles = 100;
+    }
 
+    // remove and create new grid
+    gamePad.remove();
     gamePad = document.createElement('div');
     gamePad.id = "gamepad";
     document.querySelector('body').appendChild(gamePad);
