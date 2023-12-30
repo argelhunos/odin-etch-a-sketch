@@ -3,4 +3,9 @@
     flex-wrap: wrap;
     width: 800px;
     height: 800px;
+    border: 10px solid maroon;
+}
+
+.painted {
+    background-color: black;
 }
